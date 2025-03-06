@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logueo Exitoso</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .mensaje {
+            font-size: 28px;
+        }
+        .usuario {
+            color: #EA181C;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="mensaje">✨✨ Logueo exitoso ✨✨</p>
+        <p class="usuario" id="usuarioNombre">Usuario: </p>
+    </div>
+
+    <script>
+        // Recuperar usuario desde localStorage
+        let usuario = localStorage.getItem("usuario");
+
+        if (usuario) {
+            document.getElementById("usuarioNombre").textContent = `Usuario: ${usuario}`;
+        } else {
+            // Si no hay usuario, redirige al login
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
